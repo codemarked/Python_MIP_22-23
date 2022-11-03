@@ -1,4 +1,6 @@
+# Base Currency
 base_currency = 'RON'
+
 
 # Compared to RON
 currencies = []
@@ -64,7 +66,6 @@ def sort():
 
 # Init Currencies
 def init(): # WorldWide Live Currency
-	addCurrency('RON', 1.00)
 	addCurrency('EUR', 4.90)
 	addCurrency('USD', 5.02)
 	addCurrency('CHF', 4.96)
