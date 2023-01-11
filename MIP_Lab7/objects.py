@@ -1,4 +1,5 @@
 import math
+from numpy import random
 import numpy as np
 
 class Location():
@@ -54,18 +55,19 @@ class Player():
 		return f"id={self._id},name={self.name}"
 
 class World():
-	players = []
+	players = np.array([Player]);
 	ticks = 0
 
-	def addPlayer(self,player: Player):
+	def addPlayer(self,name):
+		player = Player(name, random.randint(100), random.randint(100), random.randint(100))
 		if self.players.__contains__(player):
 			return
 		np.append(self.players, player)
 
-	def removePlayer(self,player: Player):
-		if self.players.__contains__(player) == False:
+	def removePlayer(self,players):
+		if self.players.__contains__(players) == False:
 			return
-		np.remove(self.players, player)
+		np.remove(self.players, players)
 
 	def tick(self):
 		self.ticks = self.ticks + 1
